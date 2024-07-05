@@ -28,7 +28,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: | 
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:latest 
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
           docker stop rm-backend || true 
           docker rm rm-backend || true 
-          docker run -d --name rm-backend -e ${{ secrets.DB_URL }} -e ${{ secrets.EMAIL_NAME }} -e ${{ secrets.EMAIL_PASSWORD }} -e ${{ secrets.PORTONE_CODE }} -e ${{ secrets.PORTONE_KEY }} -e ${{ secrets.PORTONE_SECRET_KEY }} -e ${{ secrets.JWT_ACCESS }} -e ${{ secrets.JWT_REFRESH }} -e ${{ secrets.S3_BUCKET_NAME }} -e ${{ secrets.S3_KEY }} -e ${{ secrets.S3_SECRET_KEY }} ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:latest
+          docker run -d --name rm-backend -e ${{ secrets.DB_URL }} -e ${{ secrets.EMAIL_NAME }} -e ${{ secrets.EMAIL_PASSWORD }} -e ${{ secrets.PORTONE_CODE }} -e ${{ secrets.PORTONE_KEY }} -e ${{ secrets.PORTONE_SECRET_KEY }} -e ${{ secrets.JWT_ACCESS }} -e ${{ secrets.JWT_REFRESH }} -e ${{ secrets.S3_BUCKET_NAME }} -e ${{ secrets.S3_KEY }} -e ${{ secrets.S3_SECRET_KEY }} ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}

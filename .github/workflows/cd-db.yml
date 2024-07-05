@@ -28,7 +28,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: | 
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:latest 
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:${{ github.sha }}
           docker stop rm-db || true 
           docker rm rm-db || true 
-          docker run -d --name rm-db ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:latest
+          docker run -d --name rm-db ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:${{ github.sha }}
