@@ -12,7 +12,7 @@ RUN gradle dependencies --no-daemon
 # 호스트 머신의 소스코드를 작업 디렉토리로 복사
 COPY . /app
 
-# Gradle 빌드를 실행하여 JAR 파일 생성
+# Gradle 빌드를 실행하여 JAR 파일 생성 !!
 #RUN gradle clean build --no-daemon
 
 # Gradle 빌드를 실행하여 JAR 파일 생성 (이때 테스트는 생략 : ddl을 none에서 update로 하니 데이터베이스와 연결을 해야하는데 연결을 못해서 에러남)
