@@ -34,5 +34,5 @@ jobs:
           docker run -d --name rm-front-admin \
           --network real-moment-network \
           -e BACKEND_HOST=${{ secrets.BACKEND_HOST }} \
-          -p 81:80 \
+          -p 81:81 \
           ${{ secrets.DOCKERHUB_USERNAME }}/rm-front-admin:${{ github.sha }}
