@@ -24,7 +24,7 @@ ENV BACKEND_PORT 8080
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# 빌드 이미지에서 생성된 dist 폴더를 nginx 이미지로 복사 (vue는 dist 폴더에 빌드되고 react는 build 폴더에 빌드된다.그래서 build 사용)
+# 빌드 이미지에서 생성된 dist 폴더를 nginx 이미지로 복사 (vue는 dist 폴더에 빌드되고 react는 build 폴더에 빌드된다.그래서 build 사용!)
 COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
