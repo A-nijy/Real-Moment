@@ -32,6 +32,7 @@ jobs:
           docker stop rm-front-user || true 
           docker rm rm-front-user || true 
           docker run -d --name rm-front-user \
+          --network real-moment-network \
           -e BACKEND_HOST=${{ secrets.BACKEND_HOST }} \
           -e PORTONE_CODE=${{ secrets.PORTONE_CODE }} \
           -p 80:80 \

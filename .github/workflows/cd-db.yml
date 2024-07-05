@@ -32,4 +32,5 @@ jobs:
           docker stop rm-db || true 
           docker rm rm-db || true 
           docker run -d --name rm-db \
+          --network real-moment-network \
           ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:${{ github.sha }}
