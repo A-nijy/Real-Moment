@@ -1,0 +1,41 @@
+header {
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+header h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Login h2 {
+  margin-top: 220px;
+  text-align: center;
+}
+.Login .login_container {
+  margin: 20px auto;
+  width: 300px;
+  padding: 50px;
+  background-color: #f3f3f3;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+.logoin_warpper {
+  display: flex;
+}
+.logoin_warpper input {
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.button_warpper {
+  margin-top: 20px;
+  padding-left: 80px;
+}
+.Login .pw_error {
+  color: rgb(255, 33, 33);
+  font-size: 13px;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,88 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap"); */
+.App {
+  /* font-family: "Gowun Dodum", sans-serif; */
+  /* font-family: "Noto Serif KR", serif; */
+  font-family: "Noto Sans KR", sans-serif;
+  /* font-size: 15px; */
+  letter-spacing: 0.5px;
+  color: #161616;
+}
+button {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+input {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+select {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+div {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+textarea {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+h2 {
+  margin-left: 20px;
+  margin-top: 40px;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+span {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+label {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+table {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+p {
+  letter-spacing: 0.5px;
+  color: #1b1b1b;
+}
+a {
+  letter-spacing: 0.5px;
+}
+
+.button-top {
+  position: fixed;
+  bottom: 50px; /* 화면 하단에서의 여백 */
+  right: 50px; /* 화면 오른쪽에서의 여백 */
+  z-index: 999; /* 다른 요소 위에 보이도록 */
+
+  color: black;
+
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 35px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  padding: 18px 14px;
+}

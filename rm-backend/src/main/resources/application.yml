@@ -1,0 +1,94 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_URL:localhost}:${DB_PORT:5432}/${DB_NAME:mydb}
+    username: ${DB_USERNAME:myuser}
+    password: ${DB_PASSWORD:mypassword}
+    driver-class-name: org.postgresql.Driver
+      #datasource:
+    #initialization-mode: never
+  
+  servelt:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  sql:
+    init:
+      mode: always
+
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_NAME:email-username-null}
+    password: ${EMAIL_PASSWORD:email-password-null}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+
+
+logging.level:
+  org.hibernate.SQL: debug
+#  org.springframework: debug
+#  org.springframework.web: debug
+
+server:
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  error:
+    include-message: always
+
+
+
+# 아임포트 가맹점 번호 / 키 / 비밀키
+imp:
+  code: ${PORTONE_CODE:portone-code-null}
+  api:
+    key: ${PORTONE_KEY:portone-key-null}
+    secret_key: ${PORTONE_SECRET_KEY:portone-secret-key-null}
+
+
+# JWT 토큰 암호화 비밀키
+jwt:
+  access: ${JWT_ACCESS:a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6}
+  refresh: ${JWT_REFRESH:z1y2x3w4v5u6t7s8r9q0p1o2n3m4l5k6j7i8h9g0f1e2d3c4b5a6}
+
+
+# AWS S3
+cloud:
+  aws:
+    s3:
+      bucket: ${S3_BUCKET_NAME:s3-bucket-null}
+    credentials:
+      access-key: ${S3_KEY:s3-key-null}
+      secret-key: ${S3_SECRET_KEY:s3-secret-key-null}
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false

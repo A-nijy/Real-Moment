@@ -1,0 +1,95 @@
+.Menu {
+  position: fixed;
+  top: 111px;
+  left: 0;
+  /* height: 0px; */
+  float: inline-start;
+  z-index: 9;
+  /* animation: menu-ani 1.3s ease forwards; */
+  width: 100%;
+  min-width: 800px;
+}
+.Menu .container {
+  background-color: #0e0e0e;
+  border-bottom: 1px solid black;
+}
+.Menu ul {
+  margin: 0;
+}
+.Menu ul li {
+  margin: 0 50px;
+  list-style-type: none;
+}
+.Menu ul li a {
+  text-decoration-line: none;
+  color: rgb(190, 190, 190);
+}
+.Menu ul li a span {
+  color: rgb(190, 190, 190);
+}
+.Menu li button {
+  color: rgb(190, 190, 190);
+  height: 50px;
+  font-size: 22px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+}
+.Menu li button:hover,
+.Menu ul li a:hover,
+.Menu ul li a span:hover {
+  color: #ffffff;
+}
+.Menu .menu_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+/* MenuList */
+.MenuList {
+  font-size: 17px;
+  background-color: rgba(255, 255, 255, 0.562);
+  position: sticky; /* 추가 */
+  top: 0; /* 추가: 화면의 맨 위에 고정 */
+  z-index: 1000;
+}
+.MenuList .category_box {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+.MenuList nav {
+  padding: 20px;
+}
+.MenuList nav ul {
+  margin: 0;
+  padding: 0;
+  /* display: flex;
+  justify-content: center; */
+}
+.MenuList nav ul li.title {
+  font-weight: bold;
+  margin: 0 40px;
+}
+.MenuList nav ul li {
+  margin: 5px 0;
+  list-style-type: none;
+  width: 100px;
+}
+.MenuList nav ul li a {
+  color: black;
+}
+
+.MenuList ul li a:hover {
+  font-weight: bold;
+  color: #9b3434;
+}
+.MenuList nav ul.subcategory {
+  font-weight: lighter;
+  margin: 10px 0;
+}
+.MenuList nav ul.subcategory li {
+  margin-right: 10px;
+}

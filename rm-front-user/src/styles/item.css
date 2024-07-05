@@ -1,0 +1,207 @@
+/* ITEM */
+.Item {
+}
+
+/* ITEMLIST */
+.ItemList {
+}
+.ItemList .item_dummy {
+  display: grid;
+  grid-template-columns: repeat(4, 380px);
+  justify-items: center;
+}
+/* 화면 크기가 1200px 이하일 때 */
+@media (max-width: 1300px) {
+  .ItemList .item_dummy {
+    margin-left: 50px;
+    grid-template-columns: repeat(3, 380px);
+  }
+}
+
+/* 화면 크기가 900px 이하일 때 */
+@media (max-width: 950px) {
+  .ItemList .item_dummy {
+    margin-left: 50px;
+    grid-template-columns: repeat(2, 380px);
+  }
+}
+
+/* ItemItem */
+.ItemItem {
+  background-color: white;
+  width: 280px;
+  margin: 30px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+.ItemItem .box_img {
+  position: relative;
+  overflow: hidden;
+}
+.ItemItem .box_img.stock-overlay {
+  position: relative; /* 부모 요소 위치 설정 */
+}
+
+.ItemItem .box_img.stock-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 검은 배경 */
+  z-index: 1; /* 다른 요소 위에 표시되도록 설정 */
+}
+
+.ItemItem .box_img .stock-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  padding: 20px;
+
+  z-index: 2; /* 다른 요소 위에 표시되도록 설정 */
+}
+.ItemItem img {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+.ItemItem:hover {
+  transform: translate(5px, -5px); /* 여기에서 변환을 적용합니다 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.ItemItem a {
+  color: black;
+  text-decoration: none;
+}
+
+.ItemItem .box_content {
+  /* width: 250px; */
+  height: 102px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+.ItemItem .name {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ItemItem .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* 수정한 내용 */
+}
+.ItemItem .price > div {
+}
+.ItemItem .price .sale_price {
+}
+.ItemItem .price .sale {
+  font-size: 16px;
+  color: #ff0000;
+}
+.ItemItem .regular_price {
+  font-size: 16px;
+  color: rgb(170, 170, 170);
+  text-decoration: line-through;
+  font-size: 14px;
+}
+.ItemItem .payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ItemItem .payment div {
+  width: 100%;
+  text-align: center;
+}
+.ItemItem .payment button {
+  width: 100%;
+  height: 100%;
+  padding: 15px 0;
+  text-align: center;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.ItemItem .payment button:hover {
+  color: rgb(255, 0, 85);
+}
+.ItemItem .heartClick {
+  animation: heart-pulse 0.5s forwards;
+}
+.ItemItem .star_box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 5px;
+}
+.ItemItem .star_box .icon {
+  color: #ffdc19;
+  padding-right: 10px;
+}
+.ItemItem .stock {
+  color: orangered;
+  font-weight: bold;
+}
+
+@keyframes heart-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.delete {
+  text-align: center;
+}
+.delete button {
+  background-color: #ffffff00;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+/* ControlMenu */
+.ControlMenu {
+  padding-left: 90%;
+}
+@media (max-width: 1100px) {
+  .ControlMenu {
+    padding-left: 78%;
+  }
+}
+@media (max-width: 1050px) {
+  .ControlMenu {
+    padding-left: 70%;
+  }
+}
+@media (max-width: 1000px) {
+  .ControlMenu {
+    padding-left: 60%;
+  }
+}
+@media (max-width: 900px) {
+  .ControlMenu {
+    padding-left: 50%;
+  }
+}
+
+.ControlMenu select {
+  font-size: 15px;
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.ControlMenu option {
+  font-size: 14px;
+}

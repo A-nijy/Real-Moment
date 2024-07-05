@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  rm-db:
+    build: ./rm-db
+    image: anijy/rm-db:1.0.0-compose
+    restart: always
+    networks:
+      - test-network
+
+  rm-backend:
+    build: ./rm-backend
+    image: anijy/rm-backend:1.0.0-compose
+    environment:
+      - DB_URL=rm-db
+      - EMAIL_NAME
+      - EMAIL_PASSWORD
+      - PORTONE_CODE
+      - PORTONE_KEY
+      - PORTONE_SECRET_KEY
+      - JWT_ACCESS
+      - JWT_REFRESH
+      - S3_BUCKET_NAME
+      - S3_KEY
+      - S3_SECRET_KEY
+    depends_on:
+      - rm-db
+    restart: on-failure
+    networks:
+      - test-network
+
+  rm-front-user:
+    build: ./rm-front-user
+    image: anijy/rm-front-user:1.0.0-compose
+    environment:
+      - BACKEND_HOST=rm-backend
+      - PORTONE_CODE
+    ports:
+      - 80:80
+    depends_on:
+      - rm-backend
+    restart: on-failure
+    networks:
+      - test-network
+
+  rm-front-admin:
+    build: ./rm-front-admin
+    image: anijy/rm-front-admin:1.0.0-compose
+    environment:
+      - BACKEND_HOST=rm-backend
+    ports:
+      - 81:80
+    depends_on:
+      - rm-backend
+    restart: on-failure
+    networks:
+      - test-network
+
+
+networks:
+  test-network:
+    driver: bridge

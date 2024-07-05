@@ -1,0 +1,194 @@
+.HomeMainImg h3 {
+  text-align: center;
+}
+.HomeMainImg .warning {
+  margin: 20px;
+}
+.HomeMainImg .warning > div {
+  margin: 5px;
+
+  text-align: center;
+}
+.HomeMainImg .imgs_box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.HomeMainImg .addImg input {
+  background-color: white;
+  width: 495px;
+  padding: 8px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.HomeMainImg input.linkchange {
+  background-color: white;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.HomeMainImg button.linkchange {
+  margin: 0;
+  width: 100%;
+  border: none;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+.HomeMainImg .btn_warpper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+.HomeMainImg .btn_warpper > div {
+  margin: 10px;
+}
+.HomeMainImg label:active {
+  box-shadow: none;
+}
+.HomeMainImg .list_img > div {
+  width: 250px;
+  text-align: center;
+}
+.HomeMainImg .list_img img {
+  max-width: 200px;
+  max-height: 200px;
+}
+.LookImage .imgs_box {
+  padding: 20px 0;
+  min-height: 350px;
+  min-width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+}
+.LookImage .list_container {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 8px;
+  width: 200px; /* 이미지 박스 크기 확대 */
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.addImg {
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  min-width: 1200px;
+  width: 100%;
+  padding: 10px;
+}
+.addImg .input_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addImg .input_box > div {
+  margin: 10px;
+}
+.addImg .btn_box {
+  text-align: center;
+}
+.addImg button.toggleBtn,
+.LookImage button.toggleBtn {
+  margin: 10px;
+  border: 1px solid #ddd;
+  background-color: rgb(155, 181, 255);
+  padding: 6px 10px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.addImg button.toggleBtn:active {
+  box-shadow: none;
+}
+
+.imageSlider {
+  margin-top: 20px;
+  width: 800px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+.slide {
+  display: flex;
+  justify-content: center;
+  transition: transform 1s ease;
+  &.active {
+    transform: translateX(0);
+  }
+  &:not(.active) {
+    transform: translateX(100%);
+  }
+}
+.imageSlider-arrow {
+  position: absolute;
+  top: 200px;
+  background-color: rgba(189, 189, 189, 0.5);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+  z-index: 10;
+  &.left {
+    margin-left: 25px;
+  }
+  &.right {
+    left: 750px;
+    margin-right: 25px;
+  }
+}
+.homeimage {
+  max-width: 800px;
+  max-height: 400px;
+}
+
+.imgs_box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto; /* 가로 스크롤 추가 */
+}
+
+.list_container {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 8px;
+  width: 200px; /* 이미지 박스 크기 확대 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list_img img {
+  max-width: 100%;
+  max-height: 100px;
+}
+
+.dragging {
+  background-color: lightblue;
+}
+.site_total_img_none {
+  margin: 50px;
+  font-size: 18px;
+  text-align: center;
+}
