@@ -28,9 +28,14 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: | 
+          echo "Logging into Docker Hub"
+          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+          echo "Pulling Docker image"
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
+          echo "Stopping and removing old Docker container"
           docker stop rm-backend || true 
           docker rm rm-backend || true 
+          echo "Running new Docker container"
           docker run -d --name rm-backend \
           -e DB_URL=${{ secrets.DB_URL }} \
           -e EMAIL_NAME=${{ secrets.EMAIL_NAME }} \
@@ -44,3 +49,4 @@ jobs:
           -e S3_KEY=${{ secrets.S3_KEY }} \
           -e S3_SECRET_KEY=${{ secrets.S3_SECRET_KEY }} \
           ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
+          echo "Docker container started"
