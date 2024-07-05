@@ -31,4 +31,4 @@ jobs:
         file: ./rm-backend/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
-        platforms: linux/amd64,linux/arm64,windows/amd64
+        platforms: linux/amd64,linux/arm64
