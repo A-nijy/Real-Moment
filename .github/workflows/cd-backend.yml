@@ -32,7 +32,7 @@ jobs:
           docker stop rm-backend || true 
           docker rm rm-backend || true 
           docker run -d --name rm-backend \
-          -e DB_URL=${{ secrets.DB_URL }} \
+          -e DB_URL=rm-db \
           -e EMAIL_NAME=${{ secrets.EMAIL_NAME }} \
           -e EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
           -e PORTONE_CODE=${{ secrets.PORTONE_CODE }} \
