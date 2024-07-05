@@ -31,4 +31,16 @@ jobs:
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
           docker stop rm-backend || true 
           docker rm rm-backend || true 
-          docker run -d --name rm-backend -e ${{ secrets.DB_URL }} -e ${{ secrets.EMAIL_NAME }} -e ${{ secrets.EMAIL_PASSWORD }} -e ${{ secrets.PORTONE_CODE }} -e ${{ secrets.PORTONE_KEY }} -e ${{ secrets.PORTONE_SECRET_KEY }} -e ${{ secrets.JWT_ACCESS }} -e ${{ secrets.JWT_REFRESH }} -e ${{ secrets.S3_BUCKET_NAME }} -e ${{ secrets.S3_KEY }} -e ${{ secrets.S3_SECRET_KEY }} -e ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
+          docker run -d --name rm-backend \
+          -e DB_URL=${{ secrets.DB_URL }} \
+          -e EMAIL_NAME=${{ secrets.EMAIL_NAME }} \
+          -e EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
+          -e PORTONE_CODE=${{ secrets.PORTONE_CODE }} \
+          -e PORTONE_KEY=${{ secrets.PORTONE_KEY }} \
+          -e PORTONE_SECRET_KEY=${{ secrets.PORTONE_SECRET_KEY }} \
+          -e JWT_ACCESS=${{ secrets.JWT_ACCESS }} \
+          -e JWT_REFRESH=${{ secrets.JWT_REFRESH }} \
+          -e S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }} \
+          -e S3_KEY=${{ secrets.S3_KEY }} \
+          -e S3_SECRET_KEY=${{ secrets.S3_SECRET_KEY }} \
+          ${{ secrets.DOCKERHUB_USERNAME }}/rm-backend:${{ github.sha }}
