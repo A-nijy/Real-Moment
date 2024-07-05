@@ -2,7 +2,7 @@ name: Front Admin CD Pipeline
 
 on:
   workflow_run:
-    workflows: [Front Admin CI Pipeline”]
+    workflows: ["Front Admin CI Pipeline"]
     types:
       - completed
 

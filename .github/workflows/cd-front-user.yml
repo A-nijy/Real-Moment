@@ -2,7 +2,7 @@ name: Front User CD Pipeline
 
 on:
   workflow_run:
-    workflows: [Front User CI Pipeline”]
+    workflows: ["Front User CI Pipeline"]
     types:
       - completed
 

@@ -2,7 +2,7 @@ name: Postgres CD Pipeline
 
 on:
   workflow_run:
-    workflows: [”Postgres CI Pipeline”]
+    workflows: ["Postgres CI Pipeline"]
     types:
       - completed
 
