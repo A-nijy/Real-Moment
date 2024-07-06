@@ -82,7 +82,7 @@ public class AdminService {
     @Transactional
     public void roleUpdateAdmin(AdminDto.RoleUpdateRequest request) {
 
-        if (!request.getRoles().equals("ROLE_OPERATOR") && !request.getRoles().equals("ROLE_CUSTOMER") && !request.getRoles().equals("ROLE_ADMIN")){
+        if (!request.getRoles().equals("ROLE_OPERATOR") && !request.getRoles().equals("ROLE_CUSTOMER") && !request.getRoles().equals("ROLE_ADMIN") && !request.getRoles().equals("ROLE_REPRESENTATIVE")){
             throw new IllegalArgumentException("권한 입력이 잘못되었습니다.");
         }
 
