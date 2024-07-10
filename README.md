@@ -5,8 +5,8 @@ Real Moment 는 화장품을 판매하는 온라인 쇼핑몰입니다.
 <br>
 <br>
 
-- Real Moment 쇼핑몰 URL  :  https://real-moment.kro.kr
-- Real Moment 관리자 URL  :  https://real-moment-admin.kro.kr
+- Real Moment 쇼핑몰 URL  :  
+- Real Moment 관리자 URL  :  
 
 <br>
 <br>
