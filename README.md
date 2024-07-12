@@ -47,7 +47,7 @@ Spring Boot 학습 후 처음 처음 진행하는 프로젝트로 새롭고 다�
 
 ## :wrench: 기술 스택
 
-- 백엔드  :  Spring Boot,  String Security,  Spring Data JPA,  QueryDSL
+- 백엔드  :  Spring Boot,  Spring Security,  Spring Data JPA,  QueryDSL
 - 데이터베이스  :  PostgreSQL
 - 인프라  :  AWS EC2,  AWS ELB,  AWS S3,  Docker,  Nginx
 - CI/CD  :  GitHub Actions
@@ -263,7 +263,7 @@ API 설계 시 보안을 철저히 고려해야 하며, 자동화된 검증 메�
 
 ---
 
-### [ 회원 정보 접근 보안 강화 ]
+### [ QueryDSL 조건 메서드 분리를 통한 코드 개선 ]
 
 #### :rotating_light: 문제 발생
 QueryDSL을 사용하여 다양한 검색 조건에 따라 데이터를 동적으로 조회할 때, 'where' 문에 모든 조건을 명시하게 되어 코드의 가독성과 재사용성이 떨어지는 문제가 발생했습니다.
