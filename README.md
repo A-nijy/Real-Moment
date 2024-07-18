@@ -47,7 +47,7 @@ Spring Boot 학습 후 처음 처음 진행하는 프로젝트로 새롭고 다�
 
 ## :wrench: 기술 스택
 
-- 백엔드  :  Spring Boot,  Spring Security,  Spring Data JPA,  QueryDSL
+- 백엔드  :  Java,  Spring Boot,  Spring Security,  Spring Data JPA,  QueryDSL
 - 데이터베이스  :  PostgreSQL
 - 인프라  :  AWS EC2,  AWS ELB,  AWS S3,  Docker,  Nginx
 - CI/CD  :  GitHub Actions
