@@ -49,7 +49,7 @@ public class AdminAnnouncementService {
 
         Announcement announcement = announcementRepository.findById(announcementId).orElseThrow(IllegalArgumentException::new);
 
-        announcement.viewCountUp();
+        announcementRepository.viewCount(announcementId);
 
         AnnouncementDto.FullResponse announcementDto = new AnnouncementDto.FullResponse(announcement);
 
