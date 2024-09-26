@@ -241,7 +241,7 @@ const OrderCheck = () => {
     } = data;
 
     if (window.IMP) {
-      window.IMP.init("imp77557143");
+      window.IMP.init("PORTONE_CODE");
 
       window.IMP.request_pay(
         {
