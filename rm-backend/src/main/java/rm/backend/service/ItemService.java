@@ -89,4 +89,16 @@ public class ItemService {
         return itemDto;
     }
 
+    // 모든 상품 이름 조회 (검색창 연관 검색용)
+    @Transactional
+    public List<ItemDto.ItemNameResponse> showItemName() {
+
+        List<Item> items = itemRepository.findAll();
+
+        List<ItemDto.ItemNameResponse> itemNamesDto = items.stream()
+                .map(ItemDto.ItemNameResponse::new)
+                .collect(Collectors.toList());
+
+        return itemNamesDto;
+    }
 }

@@ -11,6 +11,8 @@ import rm.backend.dto.innerDto.ItemDto;
 import rm.backend.dto.innerDto.SearchDto;
 import rm.backend.service.ItemService;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @Slf4j
@@ -39,5 +41,12 @@ public class ItemController {
         return itemDto;
     }
 
+    // 모든 상품명 조회 (검색창 연관 검색용)
+    @GetMapping("/itemNames")
+    public List<ItemDto.ItemNameResponse> showItemName() {
 
+        List<ItemDto.ItemNameResponse> itemNameDto = itemService.showItemName();
+
+        return itemNameDto;
+    }
 }

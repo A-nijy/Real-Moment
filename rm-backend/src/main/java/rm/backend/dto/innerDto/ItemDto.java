@@ -14,6 +14,18 @@ import java.util.List;
 
 public class ItemDto {
 
+    // 모든 상품명 응답 (검색창 연관 검색용)
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
+    public static class ItemNameResponse {
+        private String name;
+
+        public ItemNameResponse(Item item) {
+            name = item.getName();
+        }
+    }
 
     // 상품 추가 요청
     @AllArgsConstructor
