@@ -27,11 +27,11 @@ Spring Boot 학습 후 처음 진행하는 프로젝트로 새롭고 다양한 �
 <br>
 <br>
 
-## :busts_in_silhouette: 참여 인원
+## :busts_in_silhouette: 참여 인원 및 담당 역할
 
 - FE 1명 (팀원) : React를 이용한 전체적인 클라이언트 구현
 
-- BE 1명 (본인) : ERD,  API 명세서,  서버,  데이터베이스,  API 개발
+- BE 1명 (본인) : ERD 설계 및 API 명세서 작성 / Spring Boot를 활용한 전체 백엔드 서버 개발 / 배포 및 관리
 
 <br>
 <br>
