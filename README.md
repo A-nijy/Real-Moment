@@ -351,16 +351,20 @@ AWS S3를 사용하며 서버의 부담없이 대량의 이미지를 효율적�
 
 ---
 
-### [ 회원 정보 접근 보안 강화 ]
+### [ JWT 토큰 만료 문제 및 탈취 위험 보완 ]
 
 #### :rotating_light: 문제 발생
-API 접근 시 사용되는 Access Token과 회원 고유번호 파라미터 불일치로 인해 발생하는 보안 문제가 있었습니다.
+로그인 상태를 유지 중에 Access Token이 만료되어, 로그아웃이나 재로그인을 수행해야 하는 번거로움과 토큰 탈취에 대한 위험이 존재했다.
 
 #### :white_check_mark: 해결 방안
-Spring Security의 커스텀 filter Chain을 활용하여, API 접근 시 AccessToken에 담긴 회원 고유번호와 URL의 파라미터를 자동 비교 검증을 함으로써, 일치하지 않는 사용자의 접근을 차단했습니다.
+Refresh Token을 사용하여 Access Token이 만료될 때 자동으로 Access Token을 발급하여 로그인을 계속 유지할 수 있는 구조로 적용했으며,
+Access Token의 만료 기한은 짧게, Refresh Token의 만료 기한은 적당하게 지정하고 Access Token 재발급 시 Refresh Token도 새로 재발급 하는 방식으로
+Access Token과 Refresh Token 탈취에 대한 보안을 그나마 완화하였습니다.
 
 #### :heavy_exclamation_mark: 느낀점
-API 설계 시 보안을 철저히 고려해야 하며, 자동화된 검증 메커니즘을 통해 안전성을 보장받을 수 있음을 알았습니다.
+JWT 방식에서 Refresh Token의 역할을 이해할 수 있었으며, 사용자 경험과 보안을 동시에 고려해야 한다는 점을 배웠습니다.
+그리고 JWT 방식에서 보안을 강화할 수록 JWT의 장점중 하나인 stateless가 점차 stateful와 조금씩 가까워지게 되는 점을 알게 되었으며
+이를 통해 완벽한 Stateless일 수록 보안에 취약하기 때문에 Stateless와 Stateful의 균형이 어느정도 필요하다는 것을 알게 되었습니다.
 
 <br>
 <br>
