@@ -6,8 +6,11 @@ Real Moment 는 화장품을 판매하는 온라인 쇼핑몰입니다.
 - 관리자 URL : https://real-moment-admin.kro.kr
 
 <br>
-<br>
 
+
+
+<br>
+<br>
 
 ## :book: 프로젝트 개요
 
@@ -93,7 +96,9 @@ Spring Boot 학습 후 처음 진행하는 프로젝트로 새롭고 다양한 �
 
 ## :mag: Real Moment 아키텍처
 
-![github-image-001](https://github.com/A-nijy/Real-Moment/assets/150596887/22de766b-a1e8-4469-a18e-d3a177bb4b64)
+<p align="center">
+    <img src="https://github.com/A-nijy/Real-Moment/assets/150596887/22de766b-a1e8-4469-a18e-d3a177bb4b64">
+</p>
 
 GitHub Actions를 이용하여 GitHub에 소스코드를 업로드하면
 CI 파이프라인을 통해 해당 소스코드를 도커 이미지로 생성하여 DockerHub에 업로드하도록 하였고,
@@ -107,7 +112,9 @@ CI/CD 파이프라인을 구성하였습니다.
 
 ## :mag: AWS 아키텍처
 
-![github-image-006](https://github.com/A-nijy/Real-Moment/assets/150596887/b9bd35d4-201f-435e-8af6-0daabadd1cb6)
+<p align="center">
+    <img src="https://github.com/A-nijy/Real-Moment/assets/150596887/b9bd35d4-201f-435e-8af6-0daabadd1cb6">
+</p>
 
 ELB를 사용하여 http로 접근하는 트래픽을 강제로 https로 리다이렉트하여 접근하도록 리스너를 설정하였고,
 https로 접근하는 트래픽은 호스트 헤더에 따라 EC2 인스턴스로 각 80, 81 포트로 전달하도록 구성하였습니다.
@@ -117,11 +124,11 @@ https로 접근하는 트래픽은 호스트 헤더에 따라 EC2 인스턴스�
 
 ## :mag: 한국 전자결제 서비스 흐름 & 포트원 동작 구조
 
-![github-image-002](https://github.com/A-nijy/Real-Moment/assets/150596887/a55ef2ab-38a5-4c94-ab35-77fc097b717d)
-
-![github-image-003](https://github.com/A-nijy/Real-Moment/assets/150596887/37997ba4-85f6-4d16-8900-51c1817815ff)
-
-![github-image-004](https://github.com/A-nijy/Real-Moment/assets/150596887/6a3197d4-13c0-4824-bd7e-ebaa090e9694)
+<p align="center">
+    <img src="https://github.com/A-nijy/Real-Moment/assets/150596887/a55ef2ab-38a5-4c94-ab35-77fc097b717d">
+    <img src="https://github.com/A-nijy/Real-Moment/assets/150596887/37997ba4-85f6-4d16-8900-51c1817815ff">
+    <img src="https://github.com/A-nijy/Real-Moment/assets/150596887/6a3197d4-13c0-4824-bd7e-ebaa090e9694">
+</p>
 
 사용자가 주문에 대해 결제취소를 요청하면
 서버측에서 PortOne으로부터 결제취소용 액세스 토큰을 발급받은 후
@@ -132,7 +139,9 @@ https로 접근하는 트래픽은 호스트 헤더에 따라 EC2 인스턴스�
 
 ## :floppy_disk: ERD
 
-![github-image-005](https://github.com/A-nijy/Real-Moment/assets/150596887/ee23822d-79c4-4fd0-a791-4ef0daa15b54)
+<p align="center">
+    <img src="https://github.com/A-nijy/Real-Moment/assets/150596887/ee23822d-79c4-4fd0-a791-4ef0daa15b54">
+</p>
 
 - 상품의 카테고리는 부모 카테고리와 자식 카테고리로 구성하기 위해 자기 자신을 참조하는 방식을 사용했습니다.
 - 이미지 URL은 한 테이블에서 관리하지만 각 이미지 사용처와 부가적인 데이터를 구분짓기 위해 사용처 테이블을 추가하여 참조하는 방식으로 구성했습니다.
