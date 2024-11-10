@@ -11,7 +11,7 @@ COPY ./config/postgresql.conf /etc/postgresql/custom.conf
 # ENV POSTGRES_USER=myuser
 # ENV POSTGRES_PASSWORD=mypassword
 # ENV POSTGRES_DB=mydb
-# CD파이프라인에서 docker run 명령어에서 환경설정을 하는 방식으로 수정함 (위의 값과 다른 값으로 수정함.)
+# CD파이프라인에서 docker run 명령어에서 환경설정을 하는 방식으로 수정함 (위의 값과 다른 값으로 수정함)
 
 EXPOSE 5432
 
