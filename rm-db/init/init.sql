@@ -53,4 +53,4 @@ COMMIT;
 
 INSERT INTO member (grade_id, login_id, login_password, email, name, tel, birth_date, gender, this_year_pay, point, recently_login, is_delete, roles, created_date, last_modified_date)
 VALUES
-(1, 'member111', '$2a$10$zkoF4XDZ7PylcEWdnx61Ae/6RawQo0PYkQHK7R1gTtW3eZAM42Zt.', 'member1@gmail.com', '홍길동', '010-1111-1111', '1990-01-09', 'MAN', 0, 10000, '2023-11-01 12:00:00', false, 'ROLE_USER', '2020-10-01 12:00:00', '2023-11-01 12:00:00');
+(1, 'member111', '$2a$10$zkoF4XDZ7PylcEWdnx61Ae/6RawQo0PYkQHK7R1gTtW3eZAM42Zt.', 'member1@gmail.com', '홍길동', '010-1111-1111', '1990-01-09', 'MAN', 0, 1000000, '2023-11-01 12:00:00', false, 'ROLE_USER', '2020-10-01 12:00:00', '2023-11-01 12:00:00');
