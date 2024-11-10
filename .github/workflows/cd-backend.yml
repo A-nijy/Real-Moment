@@ -34,6 +34,8 @@ jobs:
           docker run -d --name rm-backend \
           --network real-moment-network \
           -e DB_URL=rm-db \
+          -e DB_USERNAME=${{ secrets.DB_USERNAME }} \
+          -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
           -e EMAIL_NAME=${{ secrets.EMAIL_NAME }} \
           -e EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} \
           -e PORTONE_CODE=${{ secrets.PORTONE_CODE }} \
