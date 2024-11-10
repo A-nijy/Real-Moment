@@ -24,7 +24,7 @@ public class CorsConfig {
         // 인증 정보를 포함한 요청을 허용
         config.addAllowedOriginPattern("https://real-moment.kro.kr");
         config.addAllowedOriginPattern("https://real-moment-admin.kro.kr");
-        config.addAllowedOriginPattern("http://43.202.60.88");
+        config.addAllowedOriginPattern("http://43.202.0.10");
         // 모든 요청의 Origin을 허용
         config.addAllowedHeader("*");
         // 모든 요청의 헤더를 허용
