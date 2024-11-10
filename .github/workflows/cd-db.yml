@@ -32,5 +32,10 @@ jobs:
           docker stop rm-db || true 
           docker rm rm-db || true 
           docker run -d --name rm-db \
+          -e POSTGRES_USER=${{ secrets.DB_USERNAME }} \
+          -e POSTGRES_PASSWORD=${{ secrets.DB_PASSWORD }} \
+          -e POSTGRES_DB=${{ secrets.DB_NAME }} \
+          -p 5432:5432 \
           --network real-moment-network \
+          -v real-moment-volume:/var/lib/postgresql/data \
           ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:${{ github.sha }}

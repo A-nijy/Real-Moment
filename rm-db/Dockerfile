@@ -4,13 +4,14 @@ FROM postgres:16
 #init.sql파일을 /docker-entrypoint-initdb.d/ 로 복사, /docker-entrypoint-initdb.d/에 있는 sql문은 컨테이너가 처음 실행 시 자동실행됨
 COPY ./init/init.sql /docker-entrypoint-initdb.d/
 
-#postgresql.conf파일을 /etc/postgresql/postgresql.conf 로 복사, 기본 설정 파일을 덮어쓰기하여 새로운 설정 적용!!
+#postgresql.conf파일을 /etc/postgresql/postgresql.conf 로 복사, 기본 설정 파일을 덮어쓰기하여 새로운 설정 적용!
 COPY ./config/postgresql.conf /etc/postgresql/custom.conf
 
-#계정정보 설정
-ENV POSTGRES_USER=myuser
-ENV POSTGRES_PASSWORD=mypassword
-ENV POSTGRES_DB=mydb
+# #계정정보 설정
+# ENV POSTGRES_USER=myuser
+# ENV POSTGRES_PASSWORD=mypassword
+# ENV POSTGRES_DB=mydb
+# CD파이프라인에서 docker run 명령어에서 환경설정을 하는 방식으로 수정함 (위의 값과 다른 값으로 수정함)
 
 EXPOSE 5432
 
