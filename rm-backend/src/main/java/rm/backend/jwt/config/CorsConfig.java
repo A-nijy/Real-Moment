@@ -38,8 +38,6 @@ public class CorsConfig {
         source.registerCorsConfiguration("/**", config);                                     
         // /api/**로 들어오는 url(경로)에 해당 CORS규칙(config)을 적용
 
-        System.out.println("Cors Filter 수행 완료");
-
         return new CorsFilter(source);
     }
 }

@@ -30,9 +30,9 @@ jobs:
         script: | 
           # 아래 볼륨 삭제 & 생성 코드는 초기 배포떄에만 사용해야 함. 그러지 않으면 이어서 사용해야 하는 볼륨 데이터가 삭제되어 다시 초기 상태로 돌아감
           # 기존 볼륨 삭제 (기존 볼륨이 존재하면 DB에 기존 세팅한 데이터 init.sql파일이 실행되지 않아 기존 데이터 사용 불가)
-          docker volume rm real-moment-volume || true
+          # docker volume rm real-moment-volume || true
           # 새로운 볼륨 생성 (CD 파이프라인에서 볼륨을 생성해야 기존 init.sql파일을 실행하여 데이터 사용 가능)
-          docker volume create real-moment-volume
+          # docker volume create real-moment-volume
           
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/rm-db:${{ github.sha }}
           docker stop rm-db || true 
