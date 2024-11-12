@@ -28,6 +28,9 @@ public class ItemController {
 
         ItemDto.SimpleItemPageResponse itemPageDto = itemService.showItems(request);
 
+        log.info("----------상품 조회 필터 : {}", request.getItemSort());
+        log.info("----------상품 조회 총 페이지 : {} ------------", itemPageDto.getTotalPage());
+
         return itemPageDto;
     }
 
