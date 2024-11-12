@@ -1,6 +1,5 @@
 import Container from "../util/Container";
 import { useCallback, useEffect, useState } from "react";
-import Pagination from "../util/Pagination";
 import ItemItem from "../Components/Item/ItemItem";
 import "../styles/item.css";
 import SaleImages from "../Components/Sale/SaleImage";
@@ -11,13 +10,11 @@ const Sale = () => {
   usePageTitle(`SALE`);
   const [itemList, setItemList] = useState([]);
   const [saleImgs, setSaleImgs] = useState([]);
-  const [totalPage, setTotalPage] = useState(0);
-  const [nowPage, setNowPage] = useState(1);
 
   const fetchItem = useCallback(() => {
     const queryParams = new URLSearchParams({
       itemName: "",
-      nowPage: nowPage,
+      nowPage: 1,
       itemSort: "sale",
       categoryId: "",
     });
@@ -34,14 +31,12 @@ const Sale = () => {
         );
 
         setItemList(filteredItemListdata);
-        setTotalPage(totalPagedata);
-        setNowPage(nowPagedata);
         console.log("fetchItem GET ", res);
       })
       .catch((error) => {
         console.error("fetchItem GET Error:", error);
       });
-  }, [nowPage]);
+  }, []);
 
   const fetchSaleImgs = () => {
     const param = "세일";
@@ -66,10 +61,6 @@ const Sale = () => {
     fetchItem();
   }, [fetchItem]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0); // 페이지 상단으로 스크롤
-  }, [nowPage]);
-
   return (
     <Container>
       <h2>SALE</h2>
@@ -85,13 +76,6 @@ const Sale = () => {
               </div>
             ))
           )}
-        </div>
-        <div className="pagination">
-          <Pagination
-            setNowPage={setNowPage}
-            nowPage={nowPage}
-            totalPage={totalPage}
-          />
         </div>
       </div>
     </Container>
