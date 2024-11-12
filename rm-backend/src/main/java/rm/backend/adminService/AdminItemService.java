@@ -48,7 +48,7 @@ public class AdminItemService {
     @Transactional
     public ItemDto.SimpleItemPageAdminResponse showItems(SearchDto.AdminItems request) {
 
-        PageRequest pageRequest = PageRequest.of(request.getNowPage() - 1, 9);
+        PageRequest pageRequest = PageRequest.of(request.getNowPage() - 1, 10);
 
         Page<Item> items = itemRepository.searchAdminPageSimple(request, pageRequest);
 
